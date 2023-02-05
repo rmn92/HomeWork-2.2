@@ -28,26 +28,33 @@ int main()
 	{
 		cout << "Введите номер месяца: ";
 		cin >> monthNumber;
-		months month = static_cast<months> (monthNumber);
 
-		switch (static_cast<int>(month))
+		if (monthNumber == 0)
 		{
-		case 0:cout << "До свидания"; break;
-		case 1:cout << "Январь"; break;
-		case 2:cout << "Февраль"; break;
-		case 3:cout << "Март"; break;
-		case 4:cout << "Апрель"; break;
-		case 5:cout << "Май"; break;
-		case 6:cout << "Июнь"; break;
-		case 7:cout << "Июль"; break;
-		case 8:cout << "Август"; break;
-		case 9:cout << "Сентябрь"; break;
-		case 10:cout << "Октябрь"; break;
-		case 11:cout << "Ноябрь"; break;
-		case 12:cout << "Декабрь"; break;
-		default:
-			cout << "Введён некорректный номер месяца!";  break;
+			cout << "До свидания!";
 		}
-		cout << endl;
+		else
+		{
+			months month = static_cast<months> (monthNumber);
+
+			switch (month)
+			{
+			case months::январь:cout << "Январь"; break;
+			case months::февраль:cout << "Февраль"; break;
+			case months::март:cout << "Март"; break;
+			case months::апрель:cout << "Апрель"; break;
+			case months::май:cout << "Май"; break;
+			case months::июнь:cout << "Июнь"; break;
+			case months::июль:cout << "Июль"; break;
+			case months::август:cout << "Август"; break;
+			case months::сентябрь:cout << "Сентябрь"; break;
+			case months::октябрь:cout << "Октябрь"; break;
+			case months::ноябрь:cout << "Ноябрь"; break;
+			case months::декабрь:cout << "Декабрь"; break;
+			default:
+				cout << "Введён некорректный номер месяца!";  break;
+			}
+			cout << endl;
+		}
 	}
 }
